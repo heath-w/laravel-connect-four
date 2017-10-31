@@ -11,6 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get( '/', function () {
+  return view( 'welcome' );
+});
+
+Route::get( '/c4', function () {
+	$currentPlayer = 'Red';
+	$board = [];
+	$boardRows = 6;
+	$boardColumns = 7;
+	for ( $r = 0; $r < $boardRows; $r++ ) {
+		for ( $c = 0; $c < $boardColumns; $c++ ) {
+			$board[$r][$c] = 'red';
+		}
+	}
+
+	// var_dump( $board );
+
+  return view( 'board', compact( 'currentPlayer', 'board', 'boardRows', 'boardColumns' ) );
 });
