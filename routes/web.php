@@ -16,7 +16,9 @@ Route::get( '/', function () {
 });
 
 Route::get( '/c4', function () {
-	$currentPlayer = 'Red';
+	$players = [ 'Red', 'Blue' ];
+	$turn = 5;
+	$currentPlayer = $players[ $turn % 2 ];
 	$board = [];
 	$boardRows = 6;
 	$boardColumns = 7;
